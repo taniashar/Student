@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package account;
+import java.io.PrintStream;
 import java.util.Scanner;
 /**
  *
@@ -18,17 +19,26 @@ public class AccountTester {
         
         System.out.println("Please enter the amount by which you want to open an account:");
         
+               
         Scanner sc=new Scanner(System.in);
         double bal=sc.nextDouble();
-        
+         if (bal>50){
+             System.out.println("Account is created");
+         }
+         else {
+             System.out.println("Please deposit more than $50 to create account");
+             
+         }
         System.out.println("Please enter the unique user name:");
         sc.nextLine();
         String user=sc.nextLine();
         
         Account a=new Account(bal,user);
         ac[0]=a;
+        
              
         System.out.println("The balance is: "+a.getBalance());  
-        System.out.println("The InterestRate per month is "+a.getInterestRate());
+        System.out.println("The InterestRate per month is "+a.newBalance());
+        
     }
 }

@@ -40,11 +40,21 @@ public class Account {
             balance=getBalance()-amount;
 
         }
+        public void calculateInterest(double amount)
+        {
+            balance=getBalance()*interestRate;
+
+        }
         
      /**The getter for the balance
      * @return the balance
      */
         public double getBalance() 
+        {
+        return balance;
+        }
+        
+         public double newBalance() 
         {
         return balance;
         }
